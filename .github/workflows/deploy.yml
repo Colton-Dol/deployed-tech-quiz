@@ -1,4 +1,4 @@
-name: Deploy
+name: Render Deploy
 
 on:
     pull_request:
