@@ -17,9 +17,8 @@ jobs:
             npm run test
 
         - name: Deploy
-          if_merged:
-            if: github.event.pull_request.merged == true
-            env:
-              DEPLOY_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
-            run: |
-              curl "$DEPLOY_URL"
+          if: github.ref == 'refs/heads/main' && github.event.pull_request.merged == true
+          env:
+            DEPLOY_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          run: |
+            curl "$DEPLOY_URL"
