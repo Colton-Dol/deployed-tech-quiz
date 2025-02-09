@@ -12,7 +12,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
-        - uses: action/checkout@v1
+          uses: action/checkout@v1
 
         - name: Test
           run: |
